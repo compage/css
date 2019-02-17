@@ -22,5 +22,28 @@
     "postcss",
     "responsive"
   ],
-  "browserslist": "last 2 versions"
+  "browserslist": "last 2 versions",
+  "devDependencies": {
+    "banner": "^0.0.5",
+    "banner-cli": "^0.12.0",
+    "browser-sync": "^2.26.3",
+    "cssnano": "^4.1.10",
+    "import-postcss": "^8.0.2",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^5.2.0",
+    "postcss": "^7.0.14",
+    "postcss-cli": "^6.1.1",
+    "postcss-normalize": "^7.0.1",
+    "postcss-preset-env": "^6.5.0",
+    "rimraf": "^2.6.3"
+  },
+  "scripts": {
+    "start": "run-p build watch serve",
+    "build": "run-s clean postcss",
+    "clean": "rimraf dist",
+    "postcss": "postcss src/compage.css -o dist/compage.min.css",
+    "banner": "banner-cli dist/*.css",
+    "watch": "onchange src -- run-p build",
+    "serve": "browser-sync start --no-notify -s test --ss dist -f dist"
+  }
 }
