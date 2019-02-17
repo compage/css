@@ -1,0 +1,10 @@
+{
+  "name": "@compage/css",
+  "version": "0.1.0",
+  "description": "Lightweight CSS framework using PostCSS",
+  "main": "dist/compage.css",
+  "repository": "compage/css",
+  "author": "Lee Mason <lee_mason@icloud.com>",
+  "license": "Apache2.0",
+  "browserslist": "last 2 versions"
+}
